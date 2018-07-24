@@ -1,0 +1,2 @@
+INFO: sockPort 9997 write
+INFO: tcpPort 5555 append

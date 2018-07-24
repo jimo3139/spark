@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Spark Revision 1.0a</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
+<script src="/socket.io/socket.io.js"></script>
+<script src="utils.js" language="Javascript" type="text/javascript"></script>
+<script src="spark.js" language="Javascript" type="text/javascript"></script>
+<script src="webrtc.js" language="Javascript" type="text/javascript"></script>
+<style>
+video {
+    background: black;
+}
+
+#kic-video {
+    background: black;
+}
+
+#video-container {
+    height:600px;
+    width: 800px;
+	top:200px;
+	left:500px;
+    position: absolute;
+}
+
+#video-container video {
+    background: #24262d;
+    display: block;
+    max-height: 500px;
+    margin: 0 auto;
+    width: 225px;
+}
+
+#windows {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#windows > div {
+    position: absolute;
+    z-index: 99;
+}
+
+#error-text {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+    margin-top: 32px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+</style>
+</head>
+
+<body onload="showMyDevices()">
+
+<div id="spark_test" style="overflow:visible; position:absolute; top:20px; left:20px; padding:0; width:750px; height:750px; border:none 2px solid #2254A6;">
+	<form action="spark.html" method="get">
+</div>
+
+<div id="" style="background:#FFFFFF none; color:#000000; position:absolute; top:10px; left:10px; width:475px; height:30;">
+<fieldset><legend align="center"><b>Spark Status</b></legend>
+<!--	
+	<tr>
+	<td align:center>
+	<input type="button" name="loopToggle1" id="loopToggle1" value="Test Stopped" onclick="startStop(0)" style="text-align:center; height:20px; width:100px; font-size:12px; color:#ffffff; background-color:red;">
+	<input type="button" name="loopToggle2" id="loopToggle2" value="Test Stopped" onclick="startStop(1)" style="text-align:center; height:20px; width:100px; font-size:12px; color:#ffffff; background-color:red;">
+	<input type="button" name="loopToggle3" id="loopToggle3" value="Test Stopped" onclick="startStop(2)" style="text-align:center; height:20px; width:100px; font-size:12px; color:#ffffff; background-color:red;">
+	<input type="button" name="loopToggle4" id="loopToggle4" value="Test Stopped" onclick="startStop(3)" style="text-align:center; height:20px; width:100px; font-size:12px; color:#ffffff; background-color:red;">
+	</td>
+	</tr>
+-->
+	<tr>
+	<textarea id = 'textArg1' style="resize:none; text-align:center; height:24px; width:460; font-size:16px; color:#ffffff; background-color:#536e7d;" readonly></textarea>
+	</tr>
+</fieldset>
+</div>
+
+
+<div id="video-container">
+	<div id="windows"></div>
+    <video id="kic-video" autoplay playsinline></video>
+    <p id="error-text"></p>
+</div>
+
+<div id="aOptions"></div>
+<div id="aInfo"></div>
+<div id="mInfo"></div>
+<div id="vInfo"></div>
+<div id="zInfo"></div>
+<div id="tInfo"></div>
+
+</form>
+</body>
+</html>
